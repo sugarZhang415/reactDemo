@@ -1,17 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import ReactDOM from "react-dom";
+import ReactDOM from "./kreact/react-dom";
+import Component from "./kreact/Component";
+import "./index.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+function FunctionComponent(props) {
+    return (
+        <div className="border">
+            <p>{props.name}</p>
+        </div>
+    );
+}
+class ClassComponent extends Component {
+    render() {
+        return (
+            <div className="border">
+                <p>{this.props.name}</p>
+            </div>
+        );
+    }
+}
+function FragmentComponent(props) {
+    return (
+        <>
+            <h1>111</h1>
+            <h1>222</h1>
+        </>
+    );
+}
+const jsx = (
+    <div className="border">
+        <h1>慢慢慢</h1>
+        <a href="https://www.kaikeba.com/">kkb</a>
+        <FunctionComponent name="函数组件" />
+        <ClassComponent name="类组件" />
+        <FragmentComponent />
+    </div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+console.log(jsx)
+ReactDOM.render(
+  
+  jsx
+  , document.getElementById("root"));
