@@ -6,7 +6,7 @@ function isStringOrNumber(sth) {
     return typeof sth === "string" || typeof sth === "number";
 }
 function createNode(vnode) {
-    const { type, props } = vnode;
+    const { type } = vnode;
     let node;
     if (typeof type === "string") {
         node = updateHostComponent(vnode);

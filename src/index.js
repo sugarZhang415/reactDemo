@@ -30,14 +30,11 @@ function FragmentComponent(props) {
 const jsx = (
     <div className="border">
         <h1>慢慢慢</h1>
-        <a href="https://www.kaikeba.com/">kkb</a>
+        <a href="https://www.baidu.com/">kkb</a>
         <FunctionComponent name="函数组件" />
         <ClassComponent name="类组件" />
         <FragmentComponent />
     </div>
 );
 console.log(jsx)
-ReactDOM.render(
-  
-  jsx
-  , document.getElementById("root"));
+ReactDOM.render( jsx , document.getElementById("root"));
