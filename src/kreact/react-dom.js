@@ -14,7 +14,7 @@ function createNode(vnode) {
         // ⽂本
         node = updateTextComponent(vnode);
     } else if (typeof type === "function") {
-        node = type.prototype.isReactComponent
+        node = type.prototype.isReactComponent//  用于判断是类组件还是函数组件，类组件的prototype设置了isReactComponent
             ? updateClassComponent(vnode)
             : updateFunctionComponent(vnode);
     } else {
